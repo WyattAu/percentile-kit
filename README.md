@@ -1,4 +1,5 @@
 # percentile-kit
+[![Estate integration](https://github.com/WyattAu/estate-integration/actions/workflows/ci.yml/badge.svg)](https://github.com/WyattAu/estate-integration/actions/workflows/ci.yml)
 
 Latency percentile tracking and budget gates for Rust — the WyattAu estate's
 P50/P99/P99.9 workflow: track latencies at runtime from a lock-free sliding
