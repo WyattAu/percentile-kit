@@ -1,9 +1,9 @@
 [package]
 name = "percentile-kit"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 rust-version = "1.85"
-description = "Latency percentile tracking and budget gates for Rust — P50/P99/P99.9 from criterion output, committed budgets, CI regression enforcement"
+description = "Latency percentile tracking and budget gates for Rust: P50/P99 from criterion output, committed budgets, CI regression enforcement"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/WyattAu/percentile-kit"
 keywords = ["latency", "percentile", "benchmark", "criterion", "performance"]
