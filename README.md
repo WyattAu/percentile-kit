@@ -110,6 +110,13 @@ Publish your measured numbers in your README per the estate standard.
 | `report` | yes | criterion parsing, `Budget`, `check_budgets`, `ReportError` |
 | `loom` | no | loom model doubles (`loom_tracker`) for exhaustive concurrency proofs |
 
+## Stability
+
+`percentile-kit` is 1.0. Breaking changes require a minor bump and a `#[deprecated]`
+window of at least one minor release; MSRV bumps are minor releases, never
+patch releases. `missing_docs` is denied and `unsafe` is forbidden. See the
+changelog for the short list of explicitly non-contractual behaviours.
+
 ## License
 
 Licensed under either of [Apache-2.0](LICENSE-APACHE) or [MIT](LICENSE-MIT)
