@@ -1,20 +1,20 @@
 # percentile-kit
 [![Estate integration](https://github.com/WyattAu/estate-integration/actions/workflows/ci.yml/badge.svg)](https://github.com/WyattAu/estate-integration/actions/workflows/ci.yml)
 
-Latency percentile tracking and budget gates for Rust — the WyattAu estate's
+Latency percentile tracking and budget gates for Rust; the WyattAu estate's
 P50/P99/P99.9 workflow: track latencies at runtime from a lock-free sliding
 window, gate criterion benchmark regressions against budgets committed in
 `percentile-budgets.toml`.
 
 - **Lock-free hot path**: `record` is one relaxed `fetch_add` on a
-  cache-line-padded write index plus one `Release` slot store — never
+  cache-line-padded write index plus one `Release` slot store; never
   blocks, locks, or allocates.
 - **Sliding window, honestly documented**: fixed-capacity ring with
   oldest-sample overwrite; nearest-rank `P50`/`P99`/`P99.9`/max reads.
   NaN samples are rejected at append. For cumulative Prometheus histograms
   use [`metrics-kit`](https://github.com/WyattAu/metrics-kit).
 - **Zero criterion dependency**: the report half parses criterion's
-  `estimates.json` / `sample.json` with serde — P50 from the `median`
+  `estimates.json` / `sample.json` with serde; P50 from the `median`
   point estimate, P99 nearest-rank over sampled data.
 - **Committed budgets, CI enforcement**: `[[budget]]` entries in TOML with
   per-metric `max_regression_pct`; PASS/FAIL markdown tables for READMEs
@@ -59,7 +59,7 @@ Commit the budgets next to your benches:
 # percentile-budgets.toml
 [[budget]]
 metric = "fib_recursive"   # criterion bench directory under target/criterion
-p50 = 100.0                # optional: budget for the median (ns, µs — your unit)
+p50 = 100.0                # optional: budget for the median (ns, µs; your unit)
 p99 = 250.0                # optional: budget for P99 (needs sample.json)
 max_regression_pct = 10.0  # allowed excess, percent
 ```

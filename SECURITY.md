@@ -1,4 +1,4 @@
-# Security Policy — percentile-kit
+# Security Policy: percentile-kit
 
 ## Supported versions
 
@@ -28,12 +28,12 @@ Security considerations for integrators:
 - **Criterion reports are parsed tolerantly but schema-checked.**
   `estimates.json` / `sample.json` are deserialized with serde (no
   unsafe, no allocation from untrusted strings beyond the parsed values).
-  Point `check_budgets` only at your own `target/criterion` output —
+  Point `check_budgets` only at your own `target/criterion` output -
   crafted reports could understate latencies and silently pass budgets.
 - The runtime tracker performs **no allocations on the hot path** and
   rejects NaN samples at append; a snapshot only ever contains exact,
   previously recorded values.
-- `#![forbid(unsafe_code)]` — no unsafe blocks exist in this crate.
+- `#![forbid(unsafe_code)]`; no unsafe blocks exist in this crate.
 
 [GitHub security advisories]:
     https://github.com/WyattAu/percentile-kit/security/advisories/new

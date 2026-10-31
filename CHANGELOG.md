@@ -25,7 +25,7 @@ First 1.0. `percentile-kit` enforces production latency budgets; this release co
 
 ### Added
 
-- `tracker` feature: `PercentileTracker<const N = 4096>` — fixed-capacity
+- `tracker` feature: `PercentileTracker<const N = 4096>`; fixed-capacity
   sliding window of `f64` samples with wait-free append (one relaxed
   `fetch_add` on a cache-line-padded write index + one `Release` slot
   store), NaN rejection, oldest-sample overwrite semantics, nearest-rank
